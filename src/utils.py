@@ -4,10 +4,10 @@ version_exp = "your_version"
 import torch
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+import os
 
 # set random seed
-def set_seed(seed=42):
-    import os
+def set_seed(seed=42):    
     os.environ["PYTHONHASHSEED"] = str(seed)
     os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"  
     
